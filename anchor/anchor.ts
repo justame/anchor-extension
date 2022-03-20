@@ -9,15 +9,11 @@ export interface AnchorOptions {
 declare module '@tiptap/core' {
   interface Commands<ReturnType> {
     anchor: {
-      /**
-       * Set a bold mark
-       */
       setAnchor: (anchor: string) => ReturnType;
-      /**
-       * Toggle a bold mark
-       */
 
       unsetAnchor: () => ReturnType;
+
+      scrollToAnchor: (anchor: string) => ReturnType;
     };
   }
 }
@@ -64,44 +60,28 @@ export const Anchor = Mark.create<AnchorOptions>({
         ({ commands }) => {
           return commands.unsetMark(this.name);
         },
-    };
-  },
+      scrollToAnchor:
+        (anchor) =>
+        ({ editor }) => {
+          const { view } = editor;
+          const foundNodes = findChildren(view.state.doc, (node) => {
+            return node?.attrs?.id?.toString() === anchor;
+          });
 
-  addProseMirrorPlugins() {
-    return [
-      new Plugin({
-        props: {
-          handleDOMEvents: {
-            click: (view, event) => {
-              if (!event.target) {
-                return false;
-              }
+          if (foundNodes.length === 0) {
+            return false;
+          }
 
-              const anchor = event.target?.getAttribute('ricos-anchor');
-              if (!anchor) {
-                return false;
-              }
+          let targetDom = null;
 
-              const foundNodes = findChildren(view.state.doc, (node) => {
-                return node?.attrs?.id === anchor;
-              });
+          targetDom = view.nodeDOM(foundNodes[0].pos);
+          if (!targetDom.scrollIntoView) {
+            // might be text node
+            targetDom = targetDom.parentElement;
+          }
 
-              let targetDom = null;
-              if (foundNodes.length > 0) {
-                targetDom = view.nodeDOM(foundNodes[0].pos);
-                if (!targetDom.scrollIntoView) {
-                  // might be text node
-                  targetDom = targetDom.parentElement;
-                }
-              }
-
-              targetDom.scrollIntoView({ behavior: 'smooth' });
-
-              return true;
-            },
-          },
+          targetDom.scrollIntoView({ behavior: 'smooth' });
         },
-      }),
-    ];
+    };
   },
 });
