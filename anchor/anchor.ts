@@ -1,10 +1,4 @@
-import {
-  Mark,
-  markInputRule,
-  markPasteRule,
-  mergeAttributes,
-  findChildren,
-} from '@tiptap/core';
+import { Mark, findChildren } from '@tiptap/core';
 
 import { Plugin } from 'prosemirror-state';
 
@@ -78,7 +72,6 @@ export const Anchor = Mark.create<AnchorOptions>({
       new Plugin({
         props: {
           handleDOMEvents: {
-            // prevent dragging nodes out of the figure
             click: (view, event) => {
               if (!event.target) {
                 return false;
