@@ -1,7 +1,5 @@
 import { Mark, findChildren } from '@tiptap/core';
 
-import { Plugin } from 'prosemirror-state';
-
 export interface AnchorOptions {
   HTMLAttributes: Record<string, any>;
 }
