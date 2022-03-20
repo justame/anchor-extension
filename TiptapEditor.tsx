@@ -9,6 +9,7 @@ import { Link } from '@tiptap/extension-link';
 import { UniqueID } from './anchor/unique-id';
 import { Anchor } from './anchor/anchor';
 import { TextIndentation } from './anchor/text-indent';
+import { Indent } from './anchor/text-indent-2';
 
 const getSelectedNodes = (editor) => {
   const selection = editor.state.selection;
@@ -41,6 +42,7 @@ export const Tiptap = ({ onSelectionChange, onLoad }) => {
         UniqueID,
         Anchor,
         TextIndentation,
+        Indent,
       ],
       content: {
         type: 'doc',
