@@ -18,7 +18,7 @@ declare module '@tiptap/core' {
       /**
        * Set a bold mark
        */
-      setAnchor: () => ReturnType;
+      setAnchor: (anchor: string) => ReturnType;
       /**
        * Toggle a bold mark
        */
