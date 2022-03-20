@@ -3,7 +3,10 @@ import {
   markInputRule,
   markPasteRule,
   mergeAttributes,
+  findChildren,
 } from '@tiptap/core';
+
+import { Plugin } from 'prosemirror-state';
 
 export interface AnchorOptions {
   HTMLAttributes: Record<string, any>;
@@ -45,8 +48,10 @@ export const Anchor = Mark.create<AnchorOptions>({
   renderHTML({ HTMLAttributes }) {
     // it can be implement using <a href="sectionName">/> but it requires to add to all nodes id/name attributes
     const span = document.createElement('span');
-    span.setAttribute('yaron', '123');
-    console.log({ HTMLAttributes });
+    if (HTMLAttributes.anchor) {
+      span.setAttribute('ricos-anchor', HTMLAttributes.anchor);
+    }
+
     return span;
   },
 
@@ -68,5 +73,44 @@ export const Anchor = Mark.create<AnchorOptions>({
           return commands.unsetMark(this.name);
         },
     };
+  },
+
+  addProseMirrorPlugins() {
+    return [
+      new Plugin({
+        props: {
+          handleDOMEvents: {
+            // prevent dragging nodes out of the figure
+            click: (view, event) => {
+              if (!event.target) {
+                return false;
+              }
+
+              const anchor = event.target?.getAttribute('ricos-anchor');
+              if (!anchor) {
+                return false;
+              }
+
+              const foundNodes = findChildren(view.state.doc, (node) => {
+                return node?.attrs?.id === anchor;
+              });
+
+              let targetDom = null;
+              if (foundNodes.length > 0) {
+                targetDom = view.nodeDOM(foundNodes[0].pos);
+                if (!targetDom.scrollIntoView) {
+                  // might be text node
+                  targetDom = targetDom.parentElement;
+                }
+              }
+
+              targetDom.scrollIntoView({ behavior: 'smooth' });
+
+              return true;
+            },
+          },
+        },
+      }),
+    ];
   },
 });
