@@ -1,0 +1,245 @@
+{
+  "nodes": [
+    {
+      "type": "PARAGRAPH",
+      "id": "eiqgg",
+      "nodes": [
+        {
+          "type": "TEXT",
+          "id": "",
+          "nodes": [],
+          "textData": {
+            "text": "yaron",
+            "decorations": [
+              {
+                "type": "BOLD",
+                "fontWeightValue": 700
+              },
+              {
+                "type": "COLOR",
+                "colorData": {
+                  "foreground": "#6d561a"
+                }
+              }
+            ]
+          }
+        }
+      ],
+      "paragraphData": {
+        "textStyle": {
+          "textAlignment": "UNRECOGNIZED"
+        },
+        "indentation": 0
+      }
+    },
+    {
+      "type": "PARAGRAPH",
+      "id": "7m4fb",
+      "nodes": [],
+      "paragraphData": {
+        "textStyle": {
+          "textAlignment": "UNRECOGNIZED"
+        },
+        "indentation": 0
+      }
+    },
+    {
+      "type": "PARAGRAPH",
+      "id": "27ckn",
+      "nodes": [],
+      "paragraphData": {
+        "textStyle": {
+          "textAlignment": "UNRECOGNIZED"
+        },
+        "indentation": 0
+      }
+    },
+    {
+      "type": "PARAGRAPH",
+      "id": "4kuai",
+      "nodes": [],
+      "paragraphData": {
+        "textStyle": {
+          "textAlignment": "UNRECOGNIZED"
+        },
+        "indentation": 0
+      }
+    },
+    {
+      "type": "PARAGRAPH",
+      "id": "3grhk",
+      "nodes": [
+        {
+          "type": "TEXT",
+          "id": "",
+          "nodes": [],
+          "textData": {
+            "text": "nachson",
+            "decorations": [
+              {
+                "type": "ITALIC",
+                "italicData": true
+              },
+              {
+                "type": "UNDERLINE",
+                "underlineData": true
+              },
+              {
+                "type": "COLOR",
+                "colorData": {
+                  "foreground": "#bf695c"
+                }
+              }
+            ]
+          }
+        }
+      ],
+      "paragraphData": {
+        "textStyle": {
+          "textAlignment": "AUTO"
+        },
+        "indentation": 0
+      }
+    },
+    {
+      "type": "PARAGRAPH",
+      "id": "4co2i",
+      "nodes": [],
+      "paragraphData": {
+        "textStyle": {
+          "textAlignment": "AUTO"
+        },
+        "indentation": 0
+      }
+    },
+    {
+      "type": "IMAGE",
+      "id": "9g4r8",
+      "nodes": [],
+      "imageData": {
+        "containerData": {
+          "alignment": "CENTER",
+          "width": {
+            "size": "CONTENT"
+          },
+          "textWrap": true
+        },
+        "image": {
+          "src": {
+            "id": "8bb438_2cbc963a95134edfa8c974ef1b931f32.jpg"
+          },
+          "width": 5120,
+          "height": 3413
+        }
+      }
+    },
+    {
+      "type": "PARAGRAPH",
+      "id": "36j05",
+      "nodes": [],
+      "paragraphData": {
+        "textStyle": {
+          "textAlignment": "AUTO"
+        },
+        "indentation": 0
+      }
+    },
+    {
+      "type": "PARAGRAPH",
+      "id": "44bt5",
+      "nodes": [
+        {
+          "type": "TEXT",
+          "id": "",
+          "nodes": [],
+          "textData": {
+            "text": "fgdfdgfdgfd ggfdggfdgfdgfd ",
+            "decorations": [
+              {
+                "type": "ITALIC",
+                "italicData": true
+              },
+              {
+                "type": "UNDERLINE",
+                "underlineData": true
+              },
+              {
+                "type": "COLOR",
+                "colorData": {
+                  "foreground": "#bf695c"
+                }
+              }
+            ]
+          }
+        }
+      ],
+      "paragraphData": {
+        "textStyle": {
+          "textAlignment": "AUTO"
+        },
+        "indentation": 0
+      }
+    },
+    {
+      "type": "PARAGRAPH",
+      "id": "scspb223",
+      "nodes": [],
+      "paragraphData": {
+        "textStyle": {
+          "textAlignment": "AUTO"
+        },
+        "indentation": 0
+      }
+    },
+    {
+      "type": "PARAGRAPH",
+      "id": "e1ahb",
+      "nodes": [],
+      "paragraphData": {
+        "textStyle": {
+          "textAlignment": "AUTO"
+        },
+        "indentation": 0
+      }
+    },
+    {
+      "type": "PARAGRAPH",
+      "id": "406b7",
+      "nodes": [
+        {
+          "type": "TEXT",
+          "id": "",
+          "nodes": [],
+          "textData": {
+            "text": "gfdgdf",
+            "decorations": [
+              {
+                "type": "BOLD",
+                "fontWeightValue": 700
+              },
+              {
+                "type": "COLOR",
+                "colorData": {
+                  "foreground": "#bf695c"
+                }
+              }
+            ]
+          }
+        }
+      ],
+      "paragraphData": {
+        "textStyle": {
+          "textAlignment": "RIGHT"
+        },
+        "indentation": 0
+      }
+    }
+  ],
+  "metadata": {
+    "version": 1,
+    "createdTimestamp": "2021-12-29T13:43:01.998Z",
+    "updatedTimestamp": "2021-12-29T13:43:01.998Z",
+    "id": "0a009388-8ceb-490d-b770-5c075657a032"
+  },
+  "documentStyle": {}
+}

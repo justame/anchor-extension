@@ -1,0 +1,42 @@
+h1,
+p {
+  font-family: Lato;
+}
+
+.toolbarButton {
+  /* border: solid 1px blue; */
+  padding: 10px;
+}
+
+.toolbar {
+  /* border: solid 1px red; */
+  display: flex;
+  padding: 3px;
+  border: solid 1px #aaa;
+}
+
+.editor {
+  border: solid 1px green;
+}
+
+.toolbarItem {
+  display: flex;
+  cursor: pointer;
+  padding: 0 4px;
+
+  align-content: center;
+  align-items: center;
+  justify-content: center;
+
+  &:hover {
+    background-color: rgb(142, 147, 148);
+  }
+}
+
+.toggleButton.active {
+  background-color: lightslategray;
+}
+
+.hash-tag {
+  border: solid 1px red;
+}
