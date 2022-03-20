@@ -16,7 +16,8 @@ declare module '@tiptap/core' {
 
 type Indentation = 1 | 2 | 3 | 4;
 
-export const TextAlign = Extension.create<TextAlignOptions>({
+const INDENT_SIZE = 24;
+export const TextIndentation = Extension.create<TextAlignOptions>({
   name: 'textAlign',
 
   defaultOptions: {
@@ -31,7 +32,13 @@ export const TextAlign = Extension.create<TextAlignOptions>({
           indentation: {
             default: 0,
             renderHTML: (attributes) => {
-              return { style: `margin-left: ${attributes.indentation * 10}` };
+              if (attributes.indentation === 0) {
+                return {};
+              }
+
+              return {
+                style: `margin-left: ${attributes.indentation * INDENT_SIZE}px`,
+              };
             },
           },
         },
@@ -44,10 +51,14 @@ export const TextAlign = Extension.create<TextAlignOptions>({
       setTextIndentation:
         (indentation: Indentation) =>
         ({ commands }) => {
+          if (indentation < 0 || indentation > 4) {
+            return false;
+          }
           return this.options.types.every((type) =>
             commands.updateAttributes(type, { indentation })
           );
         },
+      increaseIndextation: () => () => {},
       unsetTextAlign:
         () =>
         ({ commands }) => {
