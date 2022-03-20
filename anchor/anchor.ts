@@ -58,16 +58,14 @@ export const Anchor = Mark.create<AnchorOptions>({
   addCommands() {
     return {
       setAnchor:
-        () =>
+        (anchor) =>
         ({ commands }) => {
-          return commands.setMark(this.name);
+          return commands.setMark(this.name, {
+            anchor,
+          });
         },
-      toggleBold:
-        () =>
-        ({ commands }) => {
-          return commands.toggleMark(this.name);
-        },
-      unsetBold:
+
+      unsetAnchor:
         () =>
         ({ commands }) => {
           return commands.unsetMark(this.name);
