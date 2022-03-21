@@ -13,7 +13,6 @@ export const HashTag = Extension.create({
             return findHashTag(doc, null);
           },
           apply(transaction, oldState) {
-            
             return transaction.docChanged
               ? findHashTag(transaction.doc, oldState)
               : oldState;
@@ -21,7 +20,6 @@ export const HashTag = Extension.create({
         },
         props: {
           decorations(state) {
-            console.log('this.getState(state)', this.getState(state));
             return this.getState(state);
           },
         },
