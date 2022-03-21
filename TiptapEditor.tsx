@@ -9,6 +9,7 @@ import { Link } from '@tiptap/extension-link';
 import { UniqueID } from './anchor/unique-id';
 import { Anchor } from './anchor/anchor';
 import { TextIndentation } from './anchor/text-indent';
+import { LineHeight } from './anchor/line-spacing';
 import { Indent } from './anchor/text-indent-2';
 
 const getSelectedNodes = (editor) => {
@@ -43,12 +44,19 @@ export const Tiptap = ({ onSelectionChange, onLoad }) => {
         Anchor,
         TextIndentation,
         Indent,
+        LineHeight,
       ],
       content: {
         type: 'doc',
         content: [
           {
             type: 'paragraph',
+            attrs: {
+              textStyle: {
+                textAlignment: 'CENTER',
+                lineHeight: '5.5',
+              },
+            },
             content: [
               {
                 type: 'text',
